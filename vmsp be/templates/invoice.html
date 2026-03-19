@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Invoice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: "HelonikExtended";
+      src: url("https://res.cloudinary.com/dqecunpij/raw/upload/v1772629609/helonikextended-demibold_cyxhvj.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "RevueStd";
+      src: url("https://res.cloudinary.com/dqecunpij/raw/upload/v1772629608/Revue_Std_Bold_yvtfde.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .revue-text {
+      font-family: "RevueStd", sans-serif;
+    }
+
+    .jost-text {
+      font-family: "Jost", sans-serif;
+    }
+
+    .helonik-text {
+      font-family: "HelonikExtended", sans-serif;
+    }
+
+    .notosans-text {
+      font-family: "Noto Sans Telugu", sans-serif;
+    }
+
+    @page {
+      size: A5 portrait;
+      margin: 0mm;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: none !important;
+    }
+
+    @media screen {
+      body {
+        background: #f3f4f6;
+      }
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1cm;
+      font-size: 12px;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .page-break:last-child {
+      page-break-after: auto;
+    }
+
+    th,
+    td {
+      font-size: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  {{range $pageIndex, $products := .Pages}}
+  <div class="page-break">
+    <header style="text-align:center; margin-bottom:1cm;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <h2 class="helonik-text" style="text-decoration:underline; margin-top:-4px; font-size:15px; color:#135DD8;">
+          ESTIMATION</h2>
+        <h1 class="revue-text" style="font-size:20px; font-weight:bold; margin-top:-12px; color:#135DD8;">VMSP</h1>
+        <div class="helonik-text" style="margin-top:-16px; text-align:right; color:#135DD8;">
+          <h3 style="margin:0; line-height:1;">Shop 2327135</h3>
+          <h3 style="margin:0; line-height:1;">Shop 6621135</h3>
+          <h3 style="margin:0; line-height:1;">Cell : 9949369348</h3>
+        </div>
+      </div>
+
+      <h1 class="jost-text"
+        style="font-size:29px; font-weight:bold; margin-top:-5px; margin-bottom:4px; color:#800500;">
+        Sri Venkata Madhava Silver Palace
+      </h1>
+
+      <div
+        style="display:flex; margin-left:12px; margin-right:12px; justify-content:space-between; align-items:center;">
+        <img src="https://res.cloudinary.com/dqecunpij/image/upload/v1772916098/venkateswara_swamy_yp0db7.png"
+          style="height:60px; width:80px;">
+        <div>
+          <h1 class="notosans-text" style="font-size:30px; font-weight:bold; color:#135DD8; margin-top:-12px;">
+            శ్రీ వెంకట మాధవ సిల్వర్ ప్యాలెస్
+          </h1>
+          <p class="notosans-text" style="font-size:15px; margin:0; font-weight:bold; color:#135DD8; margin-top:-25px;">
+            916 KDM బంగారు, వేండి నగల వ్యాపారం</p>
+          <p class="notosans-text" style="font-size:15px; margin:0; font-weight:bold; color:#135DD8; margin-top:-4px;">
+            13/486, చిన్నబజారు, నెల్లూరు.</p>
+        </div>
+      </div>
+      <div style="border:0.5px solid #135DD8; margin-top:4px;"></div>
+      <div style="border:2px solid #135DD8; margin-top:2px;"></div>
+    </header>
+
+    <div style="display:flex; justify-content:space-between; font-size:20px;">
+      <p style="margin:0; font-weight:bold; color:#135DD8; margin-top:-28px; margin-bottom:4px;">
+        Name: <span style="text-decoration:underline dotted;">{{$.User.Name}}</span>
+      </p>
+      <p style="margin:0; font-weight:bold; color:#135DD8; margin-top:-28px; margin-bottom:4px;">
+        Date: <span style="text-decoration:underline dotted;">{{$.Date}}</span>
+      </p>
+    </div>
+
+    <div style="position:relative; width:100%;">
+      <div style="display:flex; justify-content:space-between; position:relative; z-index:10; opacity:0.3;">
+        <img src="https://res.cloudinary.com/dqecunpij/image/upload/v1772916098/ganesha_e2o8vl.png"
+          style="height:70px; width:80px;">
+        <img src="https://res.cloudinary.com/dqecunpij/image/upload/v1772916098/lakshmi_ammavaru_x4mebz.png"
+          style="height:70px; width:80px;">
+        <img src="https://res.cloudinary.com/dqecunpij/image/upload/v1772916097/sai_baba_eyeqy7.png"
+          style="height:70px; width:80px;">
+      </div>
+      <div style="position:absolute; margin:80px; opacity:0.3; left:0; right:0;">
+        <img src="https://res.cloudinary.com/dqecunpij/image/upload/v1772916098/shop_img_blue_uniform_amgmii.png"
+          style="width:100%;">
+      </div>
+      <div style="position:relative; z-index:10; margin-top:20px;">
+        <table
+          style="width:100%; border:1px solid #1F4E79; border-collapse:collapse; margin-bottom:1cm; color:#1F4E79;">
+          <thead>
+            <tr>
+              <th style="border:1px solid #1F4E79; padding:6px; text-align:left;">#</th>
+              <th style="border:1px solid #1F4E79; padding:6px; text-align:left;">Description</th>
+              <th style="border:1px solid #1F4E79; padding:6px; text-align:left;">Qty</th>
+              <th style="border:1px solid #1F4E79; padding:6px; text-align:left;">Price</th>
+              <th style="border:1px solid #1F4E79; padding:6px; text-align:left;">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range $i, $p := $products}}
+            <tr>
+              <td style="border:1px solid #1F4E79; padding:6px;">{{add (mul $pageIndex 8) (add $i 1)}}</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">{{$p.Name}}</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">{{$p.Quantity}}</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">₹{{$p.UnitPrice}}</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">₹{{$p.Amount}}</td>
+            </tr>
+            {{end}}
+          </tbody>
+          {{if eq (add $pageIndex 1) (len $.Pages)}}
+          <tfoot>
+            <tr>
+              <td colspan="4" style="text-align:right; font-weight:bold; padding:6px;">Subtotal</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">₹{{$.Subtotal}}</td>
+            </tr>
+            <tr>
+              <td colspan="4" style="text-align:right; font-weight:bold; padding:6px;">Discount</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">₹{{$.Discount}}</td>
+            </tr>
+            <tr>
+              <td colspan="4" style="text-align:right; font-weight:bold; padding:6px;">Total</td>
+              <td style="border:1px solid #1F4E79; padding:6px;">₹{{$.Total}}</td>
+            </tr>
+          </tfoot>
+          {{end}}
+        </table>
+      </div>
+    </div>
+
+    <footer style="text-align:right;">
+      <p>Authorized Signature: ________________________</p>
+    </footer>
+  </div>
+  {{end}}
+</body>
+
+</html>
