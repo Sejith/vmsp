@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import bg from "../assets/background_landscape.png";
 import Loader from "../components/loader";
 import { toast } from "react-hot-toast";
@@ -68,7 +68,7 @@ const AdminTransactions = () => {
         totalCountRef.current = count;
         setTotalCount(count);
       } catch (err) {
-        toast.error("Failed to fetch transactions");
+        toast.error(err?.response?.data?.error);
         hasErrorRef.current = true;
         setHasError(true);
       } finally {

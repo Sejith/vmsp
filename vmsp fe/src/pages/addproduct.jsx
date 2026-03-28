@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import bg from "../assets/background_landscape.png";
 import { UploadProduct } from "../clients/product";
 import { useAuth } from "../context/authcontext";

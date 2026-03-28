@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import sidebarBg from "../assets/background_potrait.png";
 import logo from "../assets/vmsp_logo.png";
 import {
@@ -29,7 +29,13 @@ const Navbar = () => {
         ? "/"
         : `/${item.name.replace(/\s+/g, "-").toLowerCase()}`;
 
-    if ((item.name === "Cart" || item.name === "Transactions" || item.name === "Gold" || item.name === "Silver") && !user) {
+    if (
+      (item.name === "Cart" ||
+        item.name === "Transactions" ||
+        item.name === "Gold" ||
+        item.name === "Silver") &&
+      !user
+    ) {
       navigate(`/signin?redirect=${route}`);
       return;
     }

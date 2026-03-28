@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import goldBg from "../assets/gold_card.png";
 import silverBg from "../assets/silver_card.png";
 import pageBg from "../assets/background_landscape.png";
@@ -30,15 +30,17 @@ const MetalCard = ({ title, price1g, bgImage, theme }) => {
     prevRef.current = price1g;
   }, [price1g]);
 
-  const priceSavaran = price1g != null ? price1g * 8  : null;
-  const priceMoosa   = price1g != null ? price1g * 10 : null;
+  const priceSavaran = price1g != null ? price1g * 8 : null;
+  const priceMoosa = price1g != null ? price1g * 10 : null;
 
-  const isGold       = theme === "gold";
+  const isGold = theme === "gold";
   const headingColor = isGold ? "#FFD966" : "#D4C4A0";
-  const dividerColor = isGold ? "rgba(255,215,50,0.75)" : "rgba(210,195,160,0.65)";
-  const upColor      = "#4ade80";
-  const downColor    = "#f87171";
-  const tickColor    = direction === "up" ? upColor : downColor;
+  const dividerColor = isGold
+    ? "rgba(255,215,50,0.75)"
+    : "rgba(210,195,160,0.65)";
+  const upColor = "#4ade80";
+  const downColor = "#f87171";
+  const tickColor = direction === "up" ? upColor : downColor;
 
   return (
     <div
@@ -78,7 +80,8 @@ const MetalCard = ({ title, price1g, bgImage, theme }) => {
             fontSize: 16,
             color: headingColor,
             fontFamily: "'Cinzel', serif",
-            textShadow: "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.9)",
+            textShadow:
+              "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.9)",
           }}
         >
           {title} Price per Gram
@@ -123,19 +126,53 @@ const MetalCard = ({ title, price1g, bgImage, theme }) => {
                   lineHeight: 1,
                 }}
               >
-                ({direction === "up" ? "+" : ""}{changePct.toFixed(2)}%)
+                ({direction === "up" ? "+" : ""}
+                {changePct.toFixed(2)}%)
               </span>
             </div>
           )}
         </div>
 
-        <div className="w-full flex items-center justify-center" style={{ gap: 0 }}>
-          <svg width="100%" height="10" viewBox="0 0 160 10" preserveAspectRatio="none" style={{ flex: 1 }}>
-            <polygon points="0,5 155,0 160,5 155,10" fill={dividerColor} style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }} />
+        <div
+          className="w-full flex items-center justify-center"
+          style={{ gap: 0 }}
+        >
+          <svg
+            width="100%"
+            height="10"
+            viewBox="0 0 160 10"
+            preserveAspectRatio="none"
+            style={{ flex: 1 }}
+          >
+            <polygon
+              points="0,5 155,0 160,5 155,10"
+              fill={dividerColor}
+              style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }}
+            />
           </svg>
-          <div style={{ width: 10, height: 10, background: dividerColor, transform: "rotate(45deg)", margin: "0 5px", boxShadow: `0 0 8px ${dividerColor}`, flexShrink: 0 }} />
-          <svg width="100%" height="10" viewBox="0 0 160 10" preserveAspectRatio="none" style={{ flex: 1 }}>
-            <polygon points="0,5 5,0 160,5 5,10" fill={dividerColor} style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }} />
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              background: dividerColor,
+              transform: "rotate(45deg)",
+              margin: "0 5px",
+              boxShadow: `0 0 8px ${dividerColor}`,
+              flexShrink: 0,
+            }}
+          />
+          <svg
+            width="100%"
+            height="10"
+            viewBox="0 0 160 10"
+            preserveAspectRatio="none"
+            style={{ flex: 1 }}
+          >
+            <polygon
+              points="0,5 5,0 160,5 5,10"
+              fill={dividerColor}
+              style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }}
+            />
           </svg>
         </div>
 
@@ -153,19 +190,57 @@ const MetalCard = ({ title, price1g, bgImage, theme }) => {
           </span>
           <span
             className="font-bold tabular-nums"
-            style={{ fontSize: 15, color: headingColor, fontFamily: "'Cinzel', serif", textShadow: "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1)" }}
+            style={{
+              fontSize: 15,
+              color: headingColor,
+              fontFamily: "'Cinzel', serif",
+              textShadow: "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1)",
+            }}
           >
             {fmt(priceSavaran)}
           </span>
         </div>
 
-        <div className="w-full flex items-center justify-center" style={{ gap: 0 }}>
-          <svg width="100%" height="10" viewBox="0 0 160 10" preserveAspectRatio="none" style={{ flex: 1 }}>
-            <polygon points="0,5 155,0 160,5 155,10" fill={dividerColor} style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }} />
+        <div
+          className="w-full flex items-center justify-center"
+          style={{ gap: 0 }}
+        >
+          <svg
+            width="100%"
+            height="10"
+            viewBox="0 0 160 10"
+            preserveAspectRatio="none"
+            style={{ flex: 1 }}
+          >
+            <polygon
+              points="0,5 155,0 160,5 155,10"
+              fill={dividerColor}
+              style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }}
+            />
           </svg>
-          <div style={{ width: 10, height: 10, background: dividerColor, transform: "rotate(45deg)", margin: "0 5px", boxShadow: `0 0 8px ${dividerColor}`, flexShrink: 0 }} />
-          <svg width="100%" height="10" viewBox="0 0 160 10" preserveAspectRatio="none" style={{ flex: 1 }}>
-            <polygon points="0,5 5,0 160,5 5,10" fill={dividerColor} style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }} />
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              background: dividerColor,
+              transform: "rotate(45deg)",
+              margin: "0 5px",
+              boxShadow: `0 0 8px ${dividerColor}`,
+              flexShrink: 0,
+            }}
+          />
+          <svg
+            width="100%"
+            height="10"
+            viewBox="0 0 160 10"
+            preserveAspectRatio="none"
+            style={{ flex: 1 }}
+          >
+            <polygon
+              points="0,5 5,0 160,5 5,10"
+              fill={dividerColor}
+              style={{ filter: `drop-shadow(0 0 3px ${dividerColor})` }}
+            />
           </svg>
         </div>
 
@@ -183,12 +258,16 @@ const MetalCard = ({ title, price1g, bgImage, theme }) => {
           </span>
           <span
             className="font-bold tabular-nums"
-            style={{ fontSize: 15, color: headingColor, fontFamily: "'Cinzel', serif", textShadow: "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1)" }}
+            style={{
+              fontSize: 15,
+              color: headingColor,
+              fontFamily: "'Cinzel', serif",
+              textShadow: "0 0 10px rgba(0,0,0,1), 0 1px 4px rgba(0,0,0,1)",
+            }}
           >
             {fmt(priceMoosa)}
           </span>
         </div>
-
       </div>
     </div>
   );
@@ -219,15 +298,26 @@ const MetalPricesBoard = () => {
             fontSize: 36,
             fontFamily: "'Cinzel', serif",
             color: "#FFD966",
-            textShadow: "0 0 24px rgba(255,200,50,0.5), 0 2px 4px rgba(0,0,0,0.9)",
+            textShadow:
+              "0 0 24px rgba(255,200,50,0.5), 0 2px 4px rgba(0,0,0,0.9)",
           }}
         >
           Live Metal Prices
         </h1>
 
         <div className="flex flex-col md:flex-row gap-14 items-center">
-          <MetalCard title="Gold"   price1g={goldPrice}   bgImage={goldBg}   theme="gold"   />
-          <MetalCard title="Silver" price1g={silverPrice} bgImage={silverBg} theme="silver" />
+          <MetalCard
+            title="Gold"
+            price1g={goldPrice}
+            bgImage={goldBg}
+            theme="gold"
+          />
+          <MetalCard
+            title="Silver"
+            price1g={silverPrice}
+            bgImage={silverBg}
+            theme="silver"
+          />
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import bg from "../assets/background_landscape.png";
 import { GetProductById } from "../clients/product";
@@ -30,7 +30,7 @@ const FindProduct = () => {
       if (err.response?.status === 404) {
         toast.error("Product not found");
       } else {
-        toast.error(err?.message || "Error fetching product");
+        toast.error(err?.response?.data?.message || "Error fetching product");
       }
     } finally {
       setLoading(false);
@@ -83,17 +83,14 @@ const FindProduct = () => {
             </p>
 
             <p>
-              <strong>Available:</strong>{" "}
-              {product.is_available ? "Yes" : "No"}
+              <strong>Available:</strong> {product.is_available ? "Yes" : "No"}
             </p>
 
             <p className="mt-1">
               <strong>Status:</strong>{" "}
               <span
                 className={
-                  product.is_available
-                    ? "text-green-400"
-                    : "text-red-400"
+                  product.is_available ? "text-green-400" : "text-red-400"
                 }
               >
                 {product.is_available ? "Active" : "Inactive"}

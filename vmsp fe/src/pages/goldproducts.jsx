@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import bg from "../assets/background_landscape.png";
 import Loader from "../components/loader";
@@ -56,7 +56,7 @@ const GoldProducts = () => {
           offsetRef.current = LIMIT;
         } else {
           setProducts((prev) => [...prev, ...(data.products || [])]);
-          offsetRef.current = offsetRef.current + LIMIT;
+          offsetRef.current = offsetRef.current + (data.products?.length || 0);
         }
 
         hasNextRef.current = data.has_next;

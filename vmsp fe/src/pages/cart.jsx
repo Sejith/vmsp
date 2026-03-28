@@ -80,7 +80,10 @@ const Cart = () => {
       };
 
       const response = await AddTransaction(transactionPayload, user.token);
-      toast.success("Purchase completed successfully!");
+      toast.success(response.message || "Purchase completed successfully!");
+      setShowModal(false);
+      setSelectedPayment("");
+      await fetchCart();
     } catch (error) {
       toast.error("Purchase failed. Please try again.");
     }

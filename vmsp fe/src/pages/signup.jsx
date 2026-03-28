@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { User, Lock, Mail, Phone, Eye, EyeClosed } from "lucide-react";
 import bg from "../assets/background_landscape.png";
 import { RegisterUser } from "../clients/users";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import bg from "../assets/background_landscape.png";
 import Loader from "../components/loader";
 import { toast } from "react-hot-toast";

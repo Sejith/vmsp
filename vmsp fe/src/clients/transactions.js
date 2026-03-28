@@ -87,7 +87,7 @@ export const GetTransactions = async ({
       headers: {
         Authorization: `Basic ${token}`,
       },
-    }
+    },
   );
 
   return res.data;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import bg from "../assets/background_landscape.png";
 import { UpdateProductById } from "../clients/product";
 import { useAuth } from "../context/authcontext";
@@ -158,9 +158,15 @@ const UpdateProduct = () => {
             onChange={handleChange}
             className="p-2 rounded bg-black/60 border border-[#D4AF37]/40 outline-none text-[#D4AF37]"
           >
-            <option value="" disabled>Select Type</option>
+            <option value="" disabled>
+              Select Type
+            </option>
             {PRODUCT_TYPES.map((t) => (
-              <option key={t} value={t} className="bg-black text-[#D4AF37] capitalize">
+              <option
+                key={t}
+                value={t}
+                className="bg-black text-[#D4AF37] capitalize"
+              >
                 {t.charAt(0).toUpperCase() + t.slice(1)}
               </option>
             ))}

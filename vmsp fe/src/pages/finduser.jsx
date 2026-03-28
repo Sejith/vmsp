@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import bg from "../assets/background_landscape.png";
 import { FindUserByPhone } from "../clients/users";
@@ -10,7 +9,6 @@ const FindUser = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
 
   const handleSearch = async () => {
     if (!phone) {
@@ -89,7 +87,12 @@ const FindUser = () => {
               </span>
             </p>
 
-            <button onClick={() => navigate("/admin/update/user", { state: { user } })} className="mt-4 px-6 py-2 rounded bg-[#D4AF37] text-black font-semibold hover:bg-[#c7a330]">
+            <button
+              onClick={() =>
+                navigate("/admin/update/user", { state: { user } })
+              }
+              className="mt-4 px-6 py-2 rounded bg-[#D4AF37] text-black font-semibold hover:bg-[#c7a330]"
+            >
               Edit User
             </button>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import bg from "../assets/background_landscape.png";
 import { toast } from "react-hot-toast";
@@ -78,14 +78,11 @@ const UpdateUser = () => {
         className="w-[85%] max-w-4xl border border-[#D4AF37]/40 rounded-xl p-8 bg-black/70 backdrop-blur-md"
       >
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-semibold text-[#D4AF37]">
-            Update User
-          </h1>
+          <h1 className="text-3xl font-semibold text-[#D4AF37]">Update User</h1>
           <hr className="border-[#D4AF37]/40 w-1/3 mx-auto mt-2" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#D4AF37]">
-
           <div className="col-span-2">
             <label className="block mb-1">Username</label>
             <input
