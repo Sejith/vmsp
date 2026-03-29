@@ -56,7 +56,7 @@ const SilverProducts = () => {
           offsetRef.current = LIMIT;
         } else {
           setProducts((prev) => [...prev, ...(data.products || [])]);
-          offsetRef.current = offsetRef.current + LIMIT;
+          offsetRef.current = offsetRef.current + (data.products?.length || 0);
         }
 
         hasNextRef.current = data.has_next;
@@ -223,6 +223,12 @@ const SilverProducts = () => {
             <ProductCard key={item.product.id} item={item} />
           ))}
         </div>
+
+        {!loading && products.length === 0 && (
+          <p className="text-center text-[#D4AF37]/70 mt-4">
+            No products found
+          </p>
+        )}
 
         <div ref={observerRef} className="mt-6">
           {loading && <Loader size="md" text="Loading products..." />}

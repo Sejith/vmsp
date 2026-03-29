@@ -224,6 +224,12 @@ const GoldProducts = () => {
           ))}
         </div>
 
+        {!loading && products.length === 0 && (
+          <p className="text-center text-[#D4AF37]/70 mt-4">
+            No products found
+          </p>
+        )}
+
         <div ref={observerRef} className="mt-6">
           {loading && <Loader size="md" text="Loading products..." />}
           {!loading && !hasNext && products.length > 0 && (
