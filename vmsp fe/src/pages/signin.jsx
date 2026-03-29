@@ -27,10 +27,8 @@ const Signin = () => {
     setLoading(true);
 
     try {
-      console.log("Sending login data:", signInData);
 
       const res = await LoginUser(signInData);
-      console.log("Login response:", res);
 
       toast.success(res.message || "Login successful");
 
